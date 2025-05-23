@@ -1,0 +1,167 @@
+/* styles.css */
+
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: background-color 0.5s ease;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+#quote-container {
+  margin-bottom: 1.5rem;
+}
+
+.quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.quote.fade-out {
+  opacity: 0;
+}
+
+.author {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #d1c4e9;
+  font-style: normal;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  background-color: #764ba2;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #5a357a;
+  outline: none;
+  transform: scale(1.05);
+}
+
+.share-buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: 0.5rem;
+}
+
+.share-buttons .btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .quote {
+    font-size: 1.2rem;
+    min-height: 80px;
+  }
+
+  .author {
+    font-size: 1rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .share-buttons {
+    justify-content: center;
+    margin-left: 0;
+  }
+}
+
+/* Dark theme */
+body.dark {
+  background: linear-gradient(135deg, #222, #444);
+  color: #eee;
+}
+
+body.dark .container {
+  background-color: rgba(30, 30, 30, 0.8);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+}
+
+body.dark .btn {
+  background-color: #5a357a;
+}
+
+body.dark .btn:hover,
+body.dark .btn:focus {
+  background-color: #764ba2;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #764ba2;
+  animation: typing 2s steps(40, end) forwards;
+}
